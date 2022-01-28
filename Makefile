@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/01/28 14:55:30 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/01/28 16:47:03 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,10 @@ OBJS	=	$(SRCS:%.c=%.o)
 
 all		:	$(NAME)
 
-$(NAME)	: $(OBJS) libft mlx
-		$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS) $(LIB)
-
-libft	:
+$(NAME)	: $(OBJS)
 		make -C libft
-
-mlx	:
 		make -C minilibx-linux
+		$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS) $(LIB)
 
 %.o : %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -46,7 +42,8 @@ clean	:
 fclean	:	clean
 		rm -rf $(NAME)
 		make -C libft fclean
+		make -C minilibx-linux fclean
 
 re		:	fclean all
 
-.PHONY: all clean fclean re libft
+.PHONY: all clean fclean re

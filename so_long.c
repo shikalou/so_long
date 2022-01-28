@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/28 14:59:21 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/01/28 16:41:45 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	main()
 {
 	void	*mlx;
-	void	*truc;
+	void	*toto;
 
 	mlx = mlx_init();
-	truc = mlx_new_window(mlx, 900, 900, "toto");
+	toto = mlx_new_image(mlx, 1000, 1000);
 	mlx_loop(mlx);
 }
