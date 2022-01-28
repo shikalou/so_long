@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/28 14:59:21 by ldinaut          ###   ########.fr       */
+/*   Created: 2021/12/02 16:27:01 by ldinaut           #+#    #+#             */
+/*   Updated: 2021/12/02 16:37:13 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main()
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	void	*mlx;
-	void	*truc;
+	int		i;
+	int		j;
+	t_list	*temp;
 
-	mlx = mlx_init();
-	truc = mlx_new_window(mlx, 900, 900, "toto");
-	mlx_loop(mlx);
+	temp = lst;
+	j = 0;
+	i = ft_lstsize(temp);
+	while (j < i)
+	{
+		f(lst->content);
+		j++;
+		lst = lst->next;
+	}
 }

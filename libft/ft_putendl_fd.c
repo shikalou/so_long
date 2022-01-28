@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/28 14:59:21 by ldinaut          ###   ########.fr       */
+/*   Created: 2021/11/26 17:30:17 by ldinaut           #+#    #+#             */
+/*   Updated: 2021/11/26 17:39:20 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main()
+void	ft_putendl_fd(char *s, int fd)
 {
-	void	*mlx;
-	void	*truc;
+	int	i;
 
-	mlx = mlx_init();
-	truc = mlx_new_window(mlx, 900, 900, "toto");
-	mlx_loop(mlx);
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+	ft_putchar_fd('\n', fd);
 }

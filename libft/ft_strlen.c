@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/28 14:59:21 by ldinaut          ###   ########.fr       */
+/*   Created: 2021/11/22 00:28:00 by ldinaut           #+#    #+#             */
+/*   Updated: 2021/11/25 12:43:00 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main()
+size_t	ft_strlen(const char *str)
 {
-	void	*mlx;
-	void	*truc;
+	size_t	i;
 
-	mlx = mlx_init();
-	truc = mlx_new_window(mlx, 900, 900, "toto");
-	mlx_loop(mlx);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

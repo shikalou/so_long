@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/28 14:59:21 by ldinaut          ###   ########.fr       */
+/*   Created: 2021/12/02 13:32:29 by ldinaut           #+#    #+#             */
+/*   Updated: 2021/12/02 15:24:49 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main()
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	void	*mlx;
-	void	*truc;
-
-	mlx = mlx_init();
-	truc = mlx_new_window(mlx, 900, 900, "toto");
-	mlx_loop(mlx);
+	del(lst->content);
+	free(lst);
 }

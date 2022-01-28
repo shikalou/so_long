@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/28 14:59:21 by ldinaut          ###   ########.fr       */
+/*   Created: 2021/11/23 15:53:15 by ldinaut           #+#    #+#             */
+/*   Updated: 2021/11/25 18:17:33 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main()
+int	ft_toupper(int c)
 {
-	void	*mlx;
-	void	*truc;
-
-	mlx = mlx_init();
-	truc = mlx_new_window(mlx, 900, 900, "toto");
-	mlx_loop(mlx);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
+
+/*int	main()
+{
+	printf("moi : %c\n", ft_toupper(48));
+	printf("vrai : %c\n", toupper(48));
+	return (0);
+}*/

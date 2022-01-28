@@ -6,13 +6,13 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/01/27 17:24:20 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/01/28 14:53:59 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../minilibx-linux/mlx.h"
+# include "mlx.h"
 
 #endif
