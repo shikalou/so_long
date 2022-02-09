@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   checkmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/09 14:25:07 by ldinaut          ###   ########.fr       */
+/*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
+/*   Updated: 2022/02/09 14:49:03 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "mlx.h"
-# include "libft/libft.h"
-# include "gnl/get_next_line.h"
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <stdlib.h>
+int	ft_check_map(int fd)
+{
+	char 	**tab;
+	char 	*str;
+	int	i;
 
-#endif
+	
+}

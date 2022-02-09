@@ -6,13 +6,16 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/01/28 16:47:03 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/09 14:29:19 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 
-SRCS	=	so_long.c
+SRCS	=	so_long.c \
+			checkmap.c \
+			get_next_line.c \
+			get_next_line_utils.c
 
 CC		=	clang
 
