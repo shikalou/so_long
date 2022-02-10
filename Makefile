@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/09 14:29:19 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/10 17:00:23 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ NAME	=	so_long
 
 SRCS	=	so_long.c \
 			checkmap.c \
-			get_next_line.c \
-			get_next_line_utils.c
+			gnl/get_next_line.c \
+			gnl/get_next_line_utils.c
 
 CC		=	clang
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g
 
 INCLUDES=	-I. -Iminilibx-linux/.
 
@@ -45,7 +45,7 @@ clean	:
 fclean	:	clean
 		rm -rf $(NAME)
 		make -C libft fclean
-		make -C minilibx-linux fclean
+		make -C minilibx-linux clean
 
 re		:	fclean all
 

@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:52:50 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/09 13:08:13 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/10 16:58:34 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "get_next_line.h"
 
 char	*ft_strjoin2(char *save, char *ret, char *line)
 {
@@ -98,19 +98,4 @@ char	*get_next_line(int fd)
 	line = NULL;
 	line = ft_save_line(i, save, fd);
 	return (line);
-}
-
-int	main()
-{
-	int fd = open("text.txt", O_RDONLY);
-	char *result;
-
-	while ((result = get_next_line(fd)) != NULL)
-	{
-		printf("%s", result);
-		free(result);
-	}
-	free(result);
-//	system("leaks a.out");
-	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 22:16:46 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/09 13:07:43 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/10 16:53:33 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "get_next_line.h"
 
 void	ft_update_save(char save[BUFFER_SIZE + 1], int index)
 {
