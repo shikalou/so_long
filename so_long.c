@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 17:48:15 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 19:10:42 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,16 @@ int	main()
 int	ft_checkarg(char *arg)
 {
 	int	i;
+	int	fd2;
 
 	i = 0;
-	if (!ft_strnstr(arg, ".ber", ft_strlen(arg)))
+	fd2 = open(arg, __O_DIRECTORY);
+	if (fd2 >= 0 || !ft_strnstr(arg, ".ber", ft_strlen(arg)))
 	{
-		ft_putstr_fd("Error\nWrong file extension\n", 2);
+		ft_putstr_fd("Error\nWrong file\n", 2);
 		return (0);
 	}
+	close(fd2);
 	return (1);
 }
 
@@ -67,7 +70,6 @@ int	main(int argc, char **argv)
 		if (i == 0)
 			return (0);
 		tab = ft_malloctab(i, argv[1]);
-		printf("huuh");
 	}
 	else
 	{
