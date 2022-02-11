@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 14:28:28 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 14:53:26 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <errno.h>
 
 int		ft_check_map(int fd);
 int		ft_checkstr(char *str, int pec[4], size_t len);
@@ -27,5 +28,7 @@ int		ft_isvalid(char c, char *toto, int pec[4]);
 int		ft_check_first(char *str);
 
 char	*get_next_line(int fd);
+
+char	**ft_filltab(char **tab, int i, int fd);
 
 #endif

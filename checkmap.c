@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 14:27:14 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 15:22:01 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ int	ft_checkstr(char *str, int pec[4], size_t len)
 	if (len != ft_strlen(str) && (len - 1) != ft_strlen(str))
 		return (0);
 	if (!(str[j] == '1' && str[len - 2] == '1'))
+	{
+		ft_putstr_fd("Error\n", 2);
 		return (0);
+	}
 	while (str[j] && str[j] != '\n')
 	{
 		if (!ft_isvalid(str[j], TOTO, pec))
@@ -79,13 +82,25 @@ int	ft_check_first(char *str)
 int	ft_check_pec(int pec[4], int len)
 {
 	if (pec[0] != 1)
+	{
+		ft_putstr_fd("Error\nWrong starting point number\n", 2);
 		return (0);
+	}
 	else if (pec[1] < 1)
+	{
+		ft_putstr_fd("Error\nWrong exit number\n", 2);
 		return (0);
+	}
 	else if (pec[2] < 1)
+	{
+		ft_putstr_fd("Error\nNo collectible\n", 2);
 		return (0);
+	}
 	else if (pec[3] != (len - 1))
+	{
+		ft_putstr_fd("Error\nWall not a la norme\n", 2);
 		return (0);
+	}
 	else
 		return (1);
 }
