@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 14:53:26 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 17:04:42 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		ft_check_first(char *str);
 
 char	*get_next_line(int fd);
 
-char	**ft_filltab(char **tab, int i, int fd);
+char	**ft_malloctab(int i, char *map);
+
+void	ft_free(char **tab, int j);
 
 #endif

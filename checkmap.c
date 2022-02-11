@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 15:22:01 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 17:25:10 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_checkstr(char *str, int pec[4], size_t len)
 		return (0);
 	if (!(str[j] == '1' && str[len - 2] == '1'))
 	{
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Error\nWalls' norme check fail\n", 2);
 		return (0);
 	}
 	while (str[j] && str[j] != '\n')
@@ -71,6 +71,7 @@ int	ft_check_first(char *str)
 	{
 		if (str[i] != '1')
 		{
+			ft_putstr_fd("Error\nWalls' norme check fail\n", 2);
 			free(str);
 			return (0);
 		}
@@ -83,12 +84,12 @@ int	ft_check_pec(int pec[4], int len)
 {
 	if (pec[0] != 1)
 	{
-		ft_putstr_fd("Error\nWrong starting point number\n", 2);
+		ft_putstr_fd("Error\nWrong starting point count\n", 2);
 		return (0);
 	}
 	else if (pec[1] < 1)
 	{
-		ft_putstr_fd("Error\nWrong exit number\n", 2);
+		ft_putstr_fd("Error\nWrong exit point count\n", 2);
 		return (0);
 	}
 	else if (pec[2] < 1)
@@ -98,7 +99,7 @@ int	ft_check_pec(int pec[4], int len)
 	}
 	else if (pec[3] != (len - 1))
 	{
-		ft_putstr_fd("Error\nWall not a la norme\n", 2);
+		ft_putstr_fd("Error\nWalls' norme check fail\n", 2);
 		return (0);
 	}
 	else
