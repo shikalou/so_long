@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/10 17:02:39 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 14:27:42 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main()
 
 	mlx = mlx_init();
 	img.img = mlx_new_image(mlx, 1000, 1200);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	mlx_loop(mlx);
 }
 */
@@ -37,7 +36,9 @@ int	main()
 int	main(int argc, char **argv)
 {
 	int	fd;
+	int	i;
 
+	i = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (argc == 2)
 	{
@@ -46,11 +47,11 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error\nMap's norme check fail\n", 2);
 			return (0);
 		}
-		printf("un genie ce louis\n");
+		i = ft_check_map(fd);
 	}
 	else
 	{
-		ft_putstr_fd("Error\nToo few arguments\n", 2);
+		ft_putstr_fd("Error\nWrong arguments count\n", 2);
 		return (0);
 	}
 }

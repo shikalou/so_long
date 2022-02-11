@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 01:31:13 by macbook          ###   ########.fr       */
+/*   Updated: 2022/02/11 14:27:14 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,14 @@ int	ft_checkstr(char *str, int pec[4], size_t len)
 
 	j = 0;
 	p = 0;
-	if (len != ft_strlen(str))
+	if (!str)
+		return (1);
+	pec[3] = 0;
+	if (len != ft_strlen(str) && (len - 1) != ft_strlen(str))
 		return (0);
 	if (!(str[j] == '1' && str[len - 2] == '1'))
 		return (0);
-	while (str[j] != '\n')
+	while (str[j] && str[j] != '\n')
 	{
 		if (!ft_isvalid(str[j], TOTO, pec))
 			return (0);
@@ -80,8 +83,8 @@ int	ft_check_pec(int pec[4], int len)
 	else if (pec[1] < 1)
 		return (0);
 	else if (pec[2] < 1)
-		return(0);
-	else if (pec[3] != len)
+		return (0);
+	else if (pec[3] != (len - 1))
 		return (0);
 	else
 		return (1);
@@ -89,10 +92,10 @@ int	ft_check_pec(int pec[4], int len)
 
 int	ft_check_map(int fd)
 {
-	char 	*str;
+	char	*str;
 	int		i;
 	size_t	len;
-	int 	pec[4];
+	int		pec[4];
 
 	i = 0;
 	ft_bzero(pec, 16);
@@ -113,5 +116,5 @@ int	ft_check_map(int fd)
 	}
 	if (!ft_check_pec(pec, len))
 		return (0);
-	return (1);
+	return (i);
 }
