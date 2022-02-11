@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:52:50 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/10 16:58:34 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 00:51:29 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strjoin(char *save, char *line)
 {
 	char	*ret;
 
-	ret = malloc(sizeof(char) * (ft_strlen(save) + ft_strlen(line) + 1));
+	ret = malloc(sizeof(char) * (ft_strlenn(save) + ft_strlenn(line) + 1));
 	if (!ret)
 	{
 		free(save);

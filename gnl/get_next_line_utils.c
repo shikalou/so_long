@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 22:16:46 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/10 16:53:33 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 00:51:29 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_get_index(char *str)
 	return (i);
 }
 
-int	ft_strlen(char *str)
+int	ft_strlenn(char *str)
 {
 	int	i;
 

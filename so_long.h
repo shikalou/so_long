@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/10 16:57:24 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 01:32:40 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# define TOTO "PEC10"
+# define TOTO "10PEC"
 
-# include "mlx.h"
+# include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
 # include <unistd.h>
 # include <stdio.h>

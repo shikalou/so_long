@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/10 16:56:38 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 01:31:13 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_isvalid(char c, char *toto, int pec[4])
 		{
 			if (c == 'P')
 				pec[0]++;
-			else if (c == 'E')
+			if (c == 'E')
 				pec[1]++;
-			else if (c == 'C')
+			if (c == 'C')
 				pec[2]++;
-			else if (c == '1')
+			if (c == '1')
 				pec[3]++;
 			return (1);
 		}
@@ -45,9 +45,9 @@ int	ft_checkstr(char *str, int pec[4], size_t len)
 	p = 0;
 	if (len != ft_strlen(str))
 		return (0);
-	if (!(str[j] == '1' && str[len - 1] == '1'))
-			return (0);
-	while (str[j])
+	if (!(str[j] == '1' && str[len - 2] == '1'))
+		return (0);
+	while (str[j] != '\n')
 	{
 		if (!ft_isvalid(str[j], TOTO, pec))
 			return (0);
@@ -61,15 +61,14 @@ int	ft_check_first(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\n')
 	{
 		if (str[i] != '1')
-			i++;
-		else
 		{
 			free(str);
 			return (0);
 		}
+		i++;
 	}
 	return (1);
 }
