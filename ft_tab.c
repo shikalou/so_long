@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:36:42 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 17:19:37 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/11 17:38:51 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_free(char **tab, int j)
 
 char	**ft_malloctab(int i, char *map)
 {
-	char	*str;
 	int		j;
 	int		fd;
 	char	**tab;
@@ -37,7 +36,7 @@ char	**ft_malloctab(int i, char *map)
 	tab = malloc(sizeof(char *) * (i + 1));
 	if (!tab)
 		return (NULL);
-	while (str != NULL && j < i)
+	while (j < i)
 	{
 		tab[j] = get_next_line(fd);
 		if (!tab[j])
