@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 19:10:42 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/14 18:09:07 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,47 +33,62 @@ int	main()
 }
 */
 
+t_data	*new_data(int i, char *map)
+{
+	t_data	*data;
+
+	data = malloc(sizeof(t_data));
+	data->map = ft_malloctab(i, map);
+	data->max_liney = i;
+	data->mlx = mlx_init();
+	data->mlx_win = mlx_new_window(data->mlx, 1500, 1100, "test");
+	data->mlx_img = mlx_new_image(data->mlx, );
+	return (data);
+}
+
 int	ft_checkarg(char *arg)
 {
-	int	i;
 	int	fd2;
 
-	i = 0;
-	fd2 = open(arg, __O_DIRECTORY);
-	if (fd2 >= 0 || !ft_strnstr(arg, ".ber", ft_strlen(arg)))
+	if (ft_strlen(arg) > 3)
 	{
-		ft_putstr_fd("Error\nWrong file\n", 2);
-		return (0);
+		fd2 = open(arg, __O_DIRECTORY);
+		if (fd2 != -1 || !ft_strnstr((arg + (ft_strlen(arg) - 4)), ".ber", 5))
+		{
+			ft_putstr_fd("Error\nWrong file\n", 2);
+			return (0);
+		}
+		close(fd2);
+		return (1);
 	}
-	close(fd2);
-	return (1);
+	ft_putstr_fd("Error\nWrong files\n", 2);
+	return (0);
 }
 
 int	main(int argc, char **argv)
 {
 	int		fd;
 	int		i;
-	char	**tab;
+	t_data	*data;
 
-	if (argc == 2)
-	{
-		if (!ft_checkarg(argv[1]))
-			return (0);
-		fd = open(argv[1], O_RDONLY);
-		if (fd == -1)
-		{
-			perror("open");
-			return (0);
-		}
-		i = ft_check_map(fd);
-		close(fd);
-		if (i == 0)
-			return (0);
-		tab = ft_malloctab(i, argv[1]);
-	}
-	else
+	if (argc != 2)
 	{
 		ft_putstr_fd("Error\nWrong arguments count\n", 2);
-		return (0);
+		return (1);
 	}
+	if (!ft_checkarg(argv[1]))
+		return (1);
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		perror("open");
+		return (1);
+	}
+	i = ft_check_map(fd);
+	close(fd);
+	if (i == 0)
+		return (1);
+	data = new_data(i, argv[1]);
+
+	mlx_loop(data->mlx);
 }

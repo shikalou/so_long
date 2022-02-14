@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 17:25:10 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/14 12:58:03 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ int	ft_checkstr(char *str, int pec[4], size_t len)
 		return (1);
 	pec[3] = 0;
 	if (len != ft_strlen(str) && (len - 1) != ft_strlen(str))
+	{
+		ft_putstr_fd("Error\nWalls' norme check fail\n", 2);
 		return (0);
+	}
 	if (!(str[j] == '1' && str[len - 2] == '1'))
 	{
 		ft_putstr_fd("Error\nWalls' norme check fail\n", 2);
