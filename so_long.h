@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/14 18:06:58 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/15 17:35:27 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ typedef struct s_data
 	void	*mlx;
 	void	*mlx_win;
 	void	*mlx_img;
+	void	*floor;
+	void	*wall;
+	void	*link_d;
+	void	*link_r;
+	void	*link_u;
+	void	*link_l;
+	void	*exit;
 	int		len_linex;
 	int		max_liney;
 	char	**map;

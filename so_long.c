@@ -6,43 +6,58 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/14 18:09:07 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/15 18:13:54 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/*typedef struct s_data
+void	ft_printmap(t_data *data)
 {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
+	int	x;
+	int	y;
 
-
-int	main()
-{
-	void	*mlx;
-	t_data	img;
-
-	mlx = mlx_init();
-	img.img = mlx_new_image(mlx, 1000, 1200);
-	mlx_loop(mlx);
+	y = 0;
+	while (y < data->max_liney)
+	{
+		x = 0;
+		while (x < data->len_linex)
+		{
+			if (data->map[y][x] == '1')
+				mlx_put_image_to_window(data->mlx, data->mlx_win,
+					data->wall, (x * 50), (y * 50));
+			else if (data->map[y][x] == '0')
+				mlx_put_image_to_window(data->mlx, data->mlx_win,
+					data->floor, (x * 50), (y * 50));
+			else if (data->map[y][x] == 'P')
+				mlx_put_image_to_window(data->mlx, data->mlx_win,
+					data->link_d, (x * 50), (y * 50));
+			else if (data->map[y][x] == 'E')
+				mlx_put_image_to_window(data->mlx, data->mlx_win,
+					data->exit, (x * 50), (y * 50));
+			x++;
+		}
+		y++;
+	}
 }
-*/
 
 t_data	*new_data(int i, char *map)
 {
 	t_data	*data;
+	int		a;
+	int		b;
 
 	data = malloc(sizeof(t_data));
 	data->map = ft_malloctab(i, map);
 	data->max_liney = i;
+	data->len_linex = (ft_strlen(data->map[0]) - 1);
 	data->mlx = mlx_init();
-	data->mlx_win = mlx_new_window(data->mlx, 1500, 1100, "test");
-	data->mlx_img = mlx_new_image(data->mlx, );
+	data->mlx_win = mlx_new_window(data->mlx, (data->len_linex * 50),
+			(data->max_liney * 50), "the legend of Luna");
+	data->floor = mlx_xpm_file_to_image(data->mlx, "img/floor2.xpm", &a, &b);
+	data->wall = mlx_xpm_file_to_image(data->mlx, "img/wall.xpm", &a, &b);
+	data->exit = mlx_xpm_file_to_image(data->mlx, "img/exit.xpm", &a, &b);
+	data->link_d = mlx_xpm_file_to_image(data->mlx, "img/link_d.xpm", &a, &b);
 	return (data);
 }
 
@@ -89,6 +104,6 @@ int	main(int argc, char **argv)
 	if (i == 0)
 		return (1);
 	data = new_data(i, argv[1]);
-
+	ft_printmap(data);
 	mlx_loop(data->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/14 12:58:03 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/15 17:54:48 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int	ft_check_first(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+	{
+		ft_putstr_fd("Error\nEmpty file\n", 2);
+		return (0);
+	}
 	while (str[i] != '\n')
 	{
 		if (str[i] != '1')
