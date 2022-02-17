@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/11 16:16:43 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/17 14:47:55 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME	=	so_long
 SRCS	=	so_long.c \
 			checkmap.c \
 			ft_tab.c \
+			init_data.c \
+			events.c \
 			gnl/get_next_line.c \
 			gnl/get_next_line_utils.c
 

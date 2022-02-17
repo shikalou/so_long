@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/15 17:35:27 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:32:48 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,28 @@ typedef struct s_data
 	void	*link_u;
 	void	*link_l;
 	void	*exit;
+	void	*rupee;
+	void	*rupee2;
+	int		step;
 	int		len_linex;
 	int		max_liney;
 	char	**map;
 }	t_data;
 
-int		ft_checkarg(char *arg);
+t_data	*new_data(int i, char *map);
+
+int		ft_check_arg(char *arg);
 int		ft_check_map(int fd);
-int		ft_checkstr(char *str, int pec[4], size_t len);
+int		ft_check_str(char *str, int pec[4], size_t len);
 int		ft_isvalid(char c, char *toto, int pec[4]);
 int		ft_check_first(char *str);
+int		ft_check_pec(int pec[4], int len);
+int		ft_hook(t_data *data);
 
 char	*get_next_line(int fd);
 char	**ft_malloctab(int i, char *map);
 
 void	ft_free(char **tab, int j);
+void	ft_printmap(t_data *data);
 
 #endif

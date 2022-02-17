@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/15 18:13:54 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:32:44 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,16 @@ void	ft_printmap(t_data *data)
 			else if (data->map[y][x] == 'E')
 				mlx_put_image_to_window(data->mlx, data->mlx_win,
 					data->exit, (x * 50), (y * 50));
+			else if (data->map[y][x] == 'C')
+				mlx_put_image_to_window(data->mlx, data->mlx_win,
+					data->rupee, (x * 50), (y * 50));
 			x++;
 		}
 		y++;
 	}
 }
 
-t_data	*new_data(int i, char *map)
-{
-	t_data	*data;
-	int		a;
-	int		b;
-
-	data = malloc(sizeof(t_data));
-	data->map = ft_malloctab(i, map);
-	data->max_liney = i;
-	data->len_linex = (ft_strlen(data->map[0]) - 1);
-	data->mlx = mlx_init();
-	data->mlx_win = mlx_new_window(data->mlx, (data->len_linex * 50),
-			(data->max_liney * 50), "the legend of Luna");
-	data->floor = mlx_xpm_file_to_image(data->mlx, "img/floor2.xpm", &a, &b);
-	data->wall = mlx_xpm_file_to_image(data->mlx, "img/wall.xpm", &a, &b);
-	data->exit = mlx_xpm_file_to_image(data->mlx, "img/exit.xpm", &a, &b);
-	data->link_d = mlx_xpm_file_to_image(data->mlx, "img/link_d.xpm", &a, &b);
-	return (data);
-}
-
-int	ft_checkarg(char *arg)
+int	ft_check_arg(char *arg)
 {
 	int	fd2;
 
@@ -91,7 +74,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Error\nWrong arguments count\n", 2);
 		return (1);
 	}
-	if (!ft_checkarg(argv[1]))
+	if (!ft_check_arg(argv[1]))
 		return (1);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
@@ -105,5 +88,6 @@ int	main(int argc, char **argv)
 		return (1);
 	data = new_data(i, argv[1]);
 	ft_printmap(data);
+	ft_hook(data);
 	mlx_loop(data->mlx);
 }

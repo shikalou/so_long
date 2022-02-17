@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/15 17:54:48 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:01:35 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_isvalid(char c, char *toto, int pec[4])
 	return (0);
 }
 
-int	ft_checkstr(char *str, int pec[4], size_t len)
+int	ft_check_str(char *str, int pec[4], size_t len)
 {
 	int	j;
 	int	p;
@@ -131,7 +131,7 @@ int	ft_check_map(int fd)
 	{
 		free(str);
 		str = get_next_line(fd);
-		if (!ft_checkstr(str, pec, len))
+		if (!ft_check_str(str, pec, len))
 		{
 			free(str);
 			return (0);
