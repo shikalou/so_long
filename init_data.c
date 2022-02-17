@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:39:32 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 12:18:34 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/17 17:14:40 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ t_data	*new_data(int i, char *map)
 	data->link_r = mlx_xpm_file_to_image(data->mlx, "img/link-r.xpm", &a, &b);
 	data->rupee = mlx_xpm_file_to_image(data->mlx, "img/rupee.xpm", &a, &b);
 	data->rupee2 = mlx_xpm_file_to_image(data->mlx,"img/rupee2.xpm", &a, &b);
+	data->step = 0;
 	return (data);
 }

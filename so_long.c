@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 15:32:44 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/17 19:19:59 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,18 @@ void	ft_printmap(t_data *data)
 				mlx_put_image_to_window(data->mlx, data->mlx_win,
 					data->floor, (x * 50), (y * 50));
 			else if (data->map[y][x] == 'P')
+			{
 				mlx_put_image_to_window(data->mlx, data->mlx_win,
 					data->link_d, (x * 50), (y * 50));
+				data->p_x = x;
+				data->p_y = y;
+			}
 			else if (data->map[y][x] == 'E')
 				mlx_put_image_to_window(data->mlx, data->mlx_win,
 					data->exit, (x * 50), (y * 50));
 			else if (data->map[y][x] == 'C')
 				mlx_put_image_to_window(data->mlx, data->mlx_win,
-					data->rupee, (x * 50), (y * 50));
+					data->rupee2, (x * 50), (y * 50));
 			x++;
 		}
 		y++;
@@ -53,7 +57,7 @@ int	ft_check_arg(char *arg)
 		fd2 = open(arg, __O_DIRECTORY);
 		if (fd2 != -1 || !ft_strnstr((arg + (ft_strlen(arg) - 4)), ".ber", 5))
 		{
-			ft_putstr_fd("Error\nWrong file\n", 2);
+			ft_putstr_fd("Error\nWrong file type\n", 2);
 			return (0);
 		}
 		close(fd2);

@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 15:32:48 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/17 19:12:24 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef struct s_data
 	int		step;
 	int		len_linex;
 	int		max_liney;
+	int		p_y;
+	int		p_x;
 	char	**map;
 }	t_data;
 
@@ -53,6 +55,10 @@ int		ft_isvalid(char c, char *toto, int pec[4]);
 int		ft_check_first(char *str);
 int		ft_check_pec(int pec[4], int len);
 int		ft_hook(t_data *data);
+int		ft_move_d(t_data *data);
+int		ft_move_u(t_data *data);
+int		ft_move_r(t_data *data);
+int		ft_move_l(t_data *data);
 
 char	*get_next_line(int fd);
 char	**ft_malloctab(int i, char *map);

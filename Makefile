@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/17 14:47:55 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/17 17:40:35 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS	=	so_long.c \
 			ft_tab.c \
 			init_data.c \
 			events.c \
+			move.c \
 			gnl/get_next_line.c \
 			gnl/get_next_line_utils.c
 
