@@ -6,13 +6,13 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 12:01:35 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/21 16:08:02 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_isvalid(char c, char *toto, int pec[4])
+int	ft_isvalid(char c, char *toto, int pec[4], t_count *truc)
 {
 	int	i;
 
@@ -26,7 +26,10 @@ int	ft_isvalid(char c, char *toto, int pec[4])
 			if (c == 'E')
 				pec[1]++;
 			if (c == 'C')
+			{
 				pec[2]++;
+				truc->total = pec[2];
+			}
 			if (c == '1')
 				pec[3]++;
 			return (1);
@@ -36,7 +39,7 @@ int	ft_isvalid(char c, char *toto, int pec[4])
 	return (0);
 }
 
-int	ft_check_str(char *str, int pec[4], size_t len)
+int	ft_check_str(char *str, int pec[4], size_t len, t_count *truc)
 {
 	int	j;
 	int	p;
@@ -58,7 +61,7 @@ int	ft_check_str(char *str, int pec[4], size_t len)
 	}
 	while (str[j] && str[j] != '\n')
 	{
-		if (!ft_isvalid(str[j], TOTO, pec))
+		if (!ft_isvalid(str[j], TOTO, pec, truc))
 			return (0);
 		j++;
 	}
@@ -114,7 +117,7 @@ int	ft_check_pec(int pec[4], int len)
 		return (1);
 }
 
-int	ft_check_map(int fd)
+int	ft_check_map(int fd, t_count *truc)
 {
 	char	*str;
 	int		i;
@@ -131,7 +134,7 @@ int	ft_check_map(int fd)
 	{
 		free(str);
 		str = get_next_line(fd);
-		if (!ft_check_str(str, pec, len))
+		if (!ft_check_str(str, pec, len, truc))
 		{
 			free(str);
 			return (0);

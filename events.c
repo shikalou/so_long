@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:32:16 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 19:20:25 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:43:28 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int	win_close(t_data *data)
 
 int	key_catch(int keycode, t_data *data)
 {
+	char *step = ft_itoa(data->step);
+
+	mlx_string_put(data->mlx, data->mlx_win, 15, 15, 00000000, step);
 	if (keycode == 65307)
 		return (win_close(data));
 	else if (keycode == 65362 || keycode == 119)

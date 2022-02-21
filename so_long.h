@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 19:12:24 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:43:14 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
@@ -23,6 +24,11 @@
 # include <sys/stat.h>
 # include <stdlib.h>
 # include <errno.h>
+
+typedef struct s_count
+{
+	int	total;
+}	t_count;
 
 typedef struct s_data
 {
@@ -43,18 +49,21 @@ typedef struct s_data
 	int		max_liney;
 	int		p_y;
 	int		p_x;
+	int		rupee_count;
 	char	**map;
 }	t_data;
 
-t_data	*new_data(int i, char *map);
+t_data	*new_data(int i, char *map, t_count *truc);
 
 int		ft_check_arg(char *arg);
-int		ft_check_map(int fd);
-int		ft_check_str(char *str, int pec[4], size_t len);
-int		ft_isvalid(char c, char *toto, int pec[4]);
+int		ft_check_map(int fd, t_count *truc);
+int		ft_check_str(char *str, int pec[4], size_t len, t_count *truc);
+int		ft_isvalid(char c, char *toto, int pec[4], t_count *truc);
 int		ft_check_first(char *str);
 int		ft_check_pec(int pec[4], int len);
 int		ft_hook(t_data *data);
+int		key_catch(int keycode, t_data *data);
+int		win_close(t_data *data);
 int		ft_move_d(t_data *data);
 int		ft_move_u(t_data *data);
 int		ft_move_r(t_data *data);

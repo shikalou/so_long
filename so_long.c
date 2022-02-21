@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 19:19:59 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:43:37 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	main(int argc, char **argv)
 	int		fd;
 	int		i;
 	t_data	*data;
+	t_count	*truc;
 
 	if (argc != 2)
 	{
@@ -86,11 +87,12 @@ int	main(int argc, char **argv)
 		perror("open");
 		return (1);
 	}
-	i = ft_check_map(fd);
+	truc = malloc(sizeof(t_count));
+	i = ft_check_map(fd, truc);
 	close(fd);
 	if (i == 0)
 		return (1);
-	data = new_data(i, argv[1]);
+	data = new_data(i, argv[1], truc);
 	ft_printmap(data);
 	ft_hook(data);
 	mlx_loop(data->mlx);
