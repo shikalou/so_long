@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:16:55 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/21 16:47:04 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:00:52 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_move_d(t_data *data)
 				win_close(data);
 			else
 			{
-				printf("still %d rupee left\n", data->rupee_count);
+				ft_printf("still %d rupee left\n", data->rupee_count);
 				ft_putstr_fd("collect all rupee !\n", 1);
 			}
 		}

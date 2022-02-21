@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/21 16:43:45 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/21 17:09:50 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS	=	-Wall -Wextra -Werror -g
 
 INCLUDES=	-I. -Iminilibx-linux/.
 
-LIB		=	-Lminilibx-linux -lmlx -lXext -lX11 -Llibft -lft -Lft_printf -lft
+LIB		=	-Lminilibx-linux -lmlx -lXext -lX11 -Llibft -lft -Lft_printf -lftprintf
 
 OBJS	=	$(SRCS:%.c=%.o)
 
