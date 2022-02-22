@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:16:55 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/21 17:00:52 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/22 19:17:08 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_move_d(t_data *data)
 {
 	if (data->map[data->p_y + 1][data->p_x] != '1')
 	{
-
 		if (data->map[data->p_y + 1][data->p_x] != 'E')
 		{
 			if (data->map[data->p_y + 1][data->p_x] == 'C')
@@ -30,18 +29,17 @@ int	ft_move_d(t_data *data)
 				(data->p_x * 50), (data->p_y * 50));
 			data->p_y++;
 			data->step++;
-			printf("step count = %d\n", data->step);
-			printf("rupee count = %d\n", data->rupee_count);
+			ft_printf("step count = %d\n", data->step);
 		}
 		else
 		{
 			if (data->rupee_count == 0)
-				win_close(data);
-			else
 			{
-				ft_printf("still %d rupee left\n", data->rupee_count);
-				ft_putstr_fd("collect all rupee !\n", 1);
+				win_close(data);
+				ft_putstr_fd("you win :)\n", 1);
 			}
+			else
+				ft_putstr_fd("collect all rupee !\n", 1);
 		}
 	}
 	return (0);
@@ -64,8 +62,7 @@ int	ft_move_u(t_data *data)
 				(data->p_x * 50), (data->p_y * 50));
 			data->p_y--;
 			data->step++;
-			printf("step count = %d\n", data->step);
-			printf("rupee count = %d\n", data->rupee_count);
+			ft_printf("step count = %d\n", data->step);
 		}
 		else
 		{
@@ -95,8 +92,7 @@ int	ft_move_r(t_data *data)
 				(data->p_x * 50), (data->p_y * 50));
 			data->p_x++;
 			data->step++;
-			printf("step count = %d\n", data->step);
-			printf("rupee count = %d\n", data->rupee_count);
+			ft_printf("step count = %d\n", data->step);
 		}
 		else
 		{
@@ -126,8 +122,7 @@ int	ft_move_l(t_data *data)
 				(data->p_x * 50), (data->p_y * 50));
 			data->p_x--;
 			data->step++;
-			printf("step count = %d\n", data->step);
-			printf("rupee count = %d\n", data->rupee_count);
+			ft_printf("step count = %d\n", data->step);
 		}
 		else
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:52:50 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 00:51:29 by macbook          ###   ########.fr       */
+/*   Updated: 2022/02/22 17:54:07 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strjoin2(char *save, char *ret, char *line)
 	return (ret);
 }
 
-char	*ft_strjoin(char *save, char *line)
+char	*ft_strjoinn(char *save, char *line)
 {
 	char	*ret;
 
@@ -63,13 +63,13 @@ char	*ft_save_line(int i, char save[BUFFER_SIZE + 1], int fd)
 	while (i > 0)
 	{
 		index = ft_get_index(save);
-		s1 = ft_strdup(save, index);
-		line = ft_strjoin(line, s1);
+		s1 = ft_strdupp(save, index);
+		line = ft_strjoinn(line, s1);
 		free(s1);
 		if (save[index] == '\n')
 		{
 			ft_update_save(save, index);
-			line = ft_strjoin(line, "\n");
+			line = ft_strjoinn(line, "\n");
 			return (line);
 		}
 		else

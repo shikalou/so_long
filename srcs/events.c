@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:32:16 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/21 15:43:28 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/22 19:08:34 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,38 @@ int	win_close(t_data *data)
 
 int	key_catch(int keycode, t_data *data)
 {
-	char *step = ft_itoa(data->step);
+	char	*step;
+	char	*s;
+	int		c;
 
-	mlx_string_put(data->mlx, data->mlx_win, 15, 15, 00000000, step);
+	s = "step count = ";
+	int ret = 0;
+	c = 000000;
+	if (data->step == 0)
+			ft_printf("step count = %d\n", data->step);
+
 	if (keycode == 65307)
-		return (win_close(data));
+		ret = win_close(data);
 	else if (keycode == 65362 || keycode == 119)
-		return (ft_move_u(data));
+		ret = ft_move_u(data);
 	else if (keycode == 65361 || keycode == 97)
-		return (ft_move_l(data));
+		ret = ft_move_l(data);
 	else if (keycode == 65364 || keycode == 115)
-		return (ft_move_d(data));
+		ret = ft_move_d(data);
 	else if (keycode == 65363 || keycode == 100)
-		return (ft_move_r(data));
-	return (0);
+		ret = ft_move_r(data);
+
+	step = ft_itoa(data->step);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall, 0 * 50, 0);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall, 1 * 50, 0);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall, 2 * 50, 0);
+	mlx_string_put(data->mlx, data->mlx_win, 20, 20, c, ft_strjoin(s, step));
+	return (ret);
 }
 
 int	ft_hook(t_data *data)
 {
-	mlx_hook(data->mlx_win, 2, 1L<<0, key_catch, data);
-	mlx_hook(data->mlx_win, 33, 1L<<17, win_close, data);
+	mlx_hook(data->mlx_win, 2, 1L << 0, key_catch, data);
+	mlx_hook(data->mlx_win, 33, 1L << 17, win_close, data);
 	return (0);
 }

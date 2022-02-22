@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 22:16:46 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/11 00:51:29 by macbook          ###   ########.fr       */
+/*   Updated: 2022/02/22 17:53:36 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_update_save(char save[BUFFER_SIZE + 1], int index)
 	}
 }
 
-char	*ft_strdup(const char *s1, int index)
+char	*ft_strdupp(const char *s1, int index)
 {
 	int			i;
 	char		*dest;

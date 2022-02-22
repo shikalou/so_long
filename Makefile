@@ -6,18 +6,18 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/21 17:09:50 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/22 14:50:23 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 
-SRCS	=	so_long.c \
-			checkmap.c \
-			ft_tab.c \
-			init_data.c \
-			events.c \
-			move.c \
+SRCS	=	srcs/so_long.c \
+			srcs/checkmap.c \
+			srcs/ft_tab.c \
+			srcs/init_data.c \
+			srcs/events.c \
+			srcs/move.c \
 			gnl/get_next_line.c \
 			gnl/get_next_line_utils.c
 

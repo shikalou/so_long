@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/21 15:43:37 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/22 18:53:24 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,32 @@ void	ft_printmap(t_data *data)
 	int	x;
 	int	y;
 
-	y = 0;
-	while (y < data->max_liney)
+	y = -1;
+	while (++y < data->max_liney)
 	{
-		x = 0;
-		while (x < data->len_linex)
+		x = -1;
+		while (++x < data->len_linex)
 		{
 			if (data->map[y][x] == '1')
-				mlx_put_image_to_window(data->mlx, data->mlx_win,
-					data->wall, (x * 50), (y * 50));
+				mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall,
+					(x * 50), (y * 50));
 			else if (data->map[y][x] == '0')
-				mlx_put_image_to_window(data->mlx, data->mlx_win,
-					data->floor, (x * 50), (y * 50));
+				mlx_put_image_to_window(data->mlx, data->mlx_win, data->floor,
+					(x * 50), (y * 50));
 			else if (data->map[y][x] == 'P')
 			{
-				mlx_put_image_to_window(data->mlx, data->mlx_win,
-					data->link_d, (x * 50), (y * 50));
+				mlx_put_image_to_window(data->mlx, data->mlx_win, data->link_d,
+					(x * 50), (y * 50));
 				data->p_x = x;
 				data->p_y = y;
 			}
 			else if (data->map[y][x] == 'E')
-				mlx_put_image_to_window(data->mlx, data->mlx_win,
-					data->exit, (x * 50), (y * 50));
+				mlx_put_image_to_window(data->mlx, data->mlx_win, data->exit,
+					(x * 50), (y * 50));
 			else if (data->map[y][x] == 'C')
-				mlx_put_image_to_window(data->mlx, data->mlx_win,
-					data->rupee2, (x * 50), (y * 50));
-			x++;
+				mlx_put_image_to_window(data->mlx, data->mlx_win, data->rupee2,
+					(x * 50), (y * 50));
 		}
-		y++;
 	}
 }
 
