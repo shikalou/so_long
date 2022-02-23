@@ -6,13 +6,13 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/21 15:43:14 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/23 18:24:35 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# define TOTO "10PEC"
+# define TOTO "10PECB"
 
 # include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
@@ -44,12 +44,15 @@ typedef struct s_data
 	void	*exit;
 	void	*rupee;
 	void	*rupee2;
+	void	*bats;
+
 	int		step;
 	int		len_linex;
 	int		max_liney;
 	int		p_y;
 	int		p_x;
 	int		rupee_count;
+
 	char	**map;
 }	t_data;
 
@@ -74,5 +77,9 @@ char	**ft_malloctab(int i, char *map);
 
 void	ft_free(char **tab, int j);
 void	ft_printmap(t_data *data);
+void	ft_put_u(t_data *data);
+void	ft_put_r(t_data *data);
+void	ft_put_l(t_data *data);
+void	ft_put_d(t_data *data);
 
 #endif

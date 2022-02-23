@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:36:42 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/17 19:20:02 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:45:39 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**ft_malloctab(int i, char *map)
 
 	j = 0;
 	fd = open(map, O_RDONLY);
-	tab = malloc(sizeof(char *) * (i + 1));
+	tab = malloc(sizeof(char *) * (i + 2));
 	if (!tab)
 		return (NULL);
 	while (j < i)
