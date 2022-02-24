@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:36:42 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/23 17:45:39 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/24 19:50:41 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	**ft_malloctab(int i, char *map)
 			ft_free(tab, j);
 		j++;
 	}
+	tab[j] = NULL;
 	return (tab);
 }

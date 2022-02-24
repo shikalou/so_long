@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/23 17:36:59 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/24 20:23:23 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRCS	=	srcs/so_long.c \
 			srcs/events.c \
 			srcs/move.c \
 			srcs/put_move_img.c \
+			srcs/colloc_rupee.c \
+			srcs/ft_free_all.c \
 			gnl/get_next_line.c \
 			gnl/get_next_line_utils.c
 
@@ -52,9 +54,8 @@ clean	:
 fclean	:	clean
 		rm -rf $(NAME)
 		make -C libft fclean
-		make -C minilibx-linux clean
 		make -C ft_printf fclean
 
 re		:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean rem

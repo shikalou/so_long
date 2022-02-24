@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/23 18:24:35 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/24 20:12:34 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_data
 {
 	void	*mlx;
 	void	*mlx_win;
-	void	*mlx_img;
+
 	void	*floor;
 	void	*wall;
 	void	*link_d;
@@ -56,7 +56,7 @@ typedef struct s_data
 	char	**map;
 }	t_data;
 
-t_data	*new_data(int i, char *map, t_count *truc);
+t_data	*init_data(int i, char *map, t_count *truc);
 
 int		ft_check_arg(char *arg);
 int		ft_check_map(int fd, t_count *truc);
@@ -71,6 +71,8 @@ int		ft_move_d(t_data *data);
 int		ft_move_u(t_data *data);
 int		ft_move_r(t_data *data);
 int		ft_move_l(t_data *data);
+int		string_put(t_data *data);
+
 
 char	*get_next_line(int fd);
 char	**ft_malloctab(int i, char *map);
@@ -81,5 +83,13 @@ void	ft_put_u(t_data *data);
 void	ft_put_r(t_data *data);
 void	ft_put_l(t_data *data);
 void	ft_put_d(t_data *data);
+void	ft_collec_rupee_d(t_data *data);
+void	ft_collec_rupee_u(t_data *data);
+void	ft_collec_rupee_r(t_data *data);
+void	ft_collec_rupee_l(t_data *data);
+void	ft_loose(t_data *data);
+void	init_img(t_data *data);
+void	ft_check_size(int x, int y);
+void	ft_free_struct(t_data *data);
 
 #endif

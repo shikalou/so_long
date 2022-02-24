@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/23 18:23:35 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/24 20:38:17 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,14 @@ int	ft_check_arg(char *arg)
 	return (0);
 }
 
+
 int	main(int argc, char **argv)
 {
 	int		fd;
 	int		i;
 	t_data	*data;
 	t_count	*truc;
+
 
 	if (argc != 2)
 	{
@@ -109,8 +111,11 @@ int	main(int argc, char **argv)
 	close(fd);
 	if (i == 0)
 		return (1);
-	data = new_data(i, argv[1], truc);
+	data = init_data(i, argv[1], truc);
+	free(truc);
 	ft_printmap(data);
 	ft_hook(data);
+	mlx_loop_hook(data->mlx, string_put, data);
 	mlx_loop(data->mlx);
+	//ft_free_struct(data);
 }

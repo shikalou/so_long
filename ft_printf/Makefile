@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 16:42:54 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/21 12:45:55 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/24 20:26:27 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,9 @@ libft	:
 
 clean	:
 	rm -rf $(OBJS)
-	make -C libft clean
 
 fclean	:	clean
 	rm -rf $(NAME)
-	make -C libft fclean
 
 re	:	fclean all
 

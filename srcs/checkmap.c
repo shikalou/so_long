@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/21 16:08:02 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/24 15:34:57 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	ft_isvalid(char c, char *toto, int pec[4], t_count *truc)
 		}
 		i++;
 	}
+	ft_putstr_fd("Error\nMap's norme check fail\n", 2);
 	return (0);
 }
 
