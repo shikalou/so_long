@@ -6,20 +6,46 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:39:32 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/24 19:23:42 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/25 18:20:19 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_check_size(int x, int y)
+void	ft_check_img(t_count *truc)
+{
+	if (open("img/", __O_DIRECTORY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/floor.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/wall.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/exit3.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/link-d.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/link-u.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/link-l.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/link-r.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/rupee.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/rupee2.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+	if (open("img/ennemy.xpm", O_RDONLY) < 0)
+		ft_free_no_img(truc);
+}
+
+void	ft_check_size(t_data *data, t_count *truc, int x, int y)
 {
 	if (x > 52 || y > 26)
 	{
-		printf("juju le plus bo");
-		//free map
-		//free struct
-		//
+		ft_free_map(data);
+		free(data);
+		free(truc);
+		exit(0);
 	}
 }
 
@@ -44,18 +70,19 @@ t_data	*init_data(int i, char *map, t_count *truc)
 {
 	t_data	*data;
 
+	ft_check_img(truc);
 	data = malloc(sizeof(t_data));
 	if (!data)
 		exit(0);
 	data->map = ft_malloctab(i, map);
 	data->max_liney = i;
 	data->len_linex = (ft_strlen(data->map[0]) - 1);
-	ft_check_size(data->len_linex, data->max_liney);
+	ft_check_size(data, truc, data->len_linex, data->max_liney);
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		exit(0);
 	data->mlx_win = mlx_new_window(data->mlx, (data->len_linex * 50),
-			(data->max_liney * 50 + 50), "The Legend of Lune");
+			(data->max_liney * 50), "The Legend of Lune");
 	init_img(data);
 	data->step = 0;
 	data->rupee_count = truc->total;

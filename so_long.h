@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/24 20:12:34 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/25 18:35:39 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ typedef struct s_data
 
 t_data	*init_data(int i, char *map, t_count *truc);
 
-int		ft_check_arg(char *arg);
+int		ft_check_arg(int argc, char *arg);
 int		ft_check_map(int fd, t_count *truc);
 int		ft_check_str(char *str, int pec[4], size_t len, t_count *truc);
 int		ft_isvalid(char c, char *toto, int pec[4], t_count *truc);
 int		ft_check_first(char *str);
-int		ft_check_pec(int pec[4], int len);
+int		ft_check_pec(int pec[4], int len, int i);
 int		ft_hook(t_data *data);
 int		key_catch(int keycode, t_data *data);
 int		win_close(t_data *data);
@@ -79,6 +79,7 @@ char	**ft_malloctab(int i, char *map);
 
 void	ft_free(char **tab, int j);
 void	ft_printmap(t_data *data);
+void	ft_printmap2(t_data *data);
 void	ft_put_u(t_data *data);
 void	ft_put_r(t_data *data);
 void	ft_put_l(t_data *data);
@@ -89,7 +90,10 @@ void	ft_collec_rupee_r(t_data *data);
 void	ft_collec_rupee_l(t_data *data);
 void	ft_loose(t_data *data);
 void	init_img(t_data *data);
-void	ft_check_size(int x, int y);
+void	ft_check_size(t_data *data, t_count *truc, int x, int y);
 void	ft_free_struct(t_data *data);
+void	ft_free_map(t_data *data);
+void	ft_check_img(t_count *truc);
+void	ft_free_no_img(t_count *truc);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/24 20:23:23 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/25 17:36:49 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	=	so_long
 
 SRCS	=	srcs/so_long.c \
 			srcs/checkmap.c \
+			srcs/ft_printmap.c \
 			srcs/ft_tab.c \
 			srcs/init_data.c \
 			srcs/events.c \

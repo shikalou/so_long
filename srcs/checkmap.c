@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/24 15:34:57 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/25 18:35:48 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	ft_check_first(char *str)
 	return (1);
 }
 
-int	ft_check_pec(int pec[4], int len)
+int	ft_check_pec(int pec[4], int len, int i)
 {
 	if (pec[0] != 1)
 	{
@@ -114,6 +114,8 @@ int	ft_check_pec(int pec[4], int len)
 		ft_putstr_fd("Error\nWalls' norme check fail\n", 2);
 		return (0);
 	}
+	else if (i == 0)
+		return (0);
 	else
 		return (1);
 }
@@ -142,7 +144,7 @@ int	ft_check_map(int fd, t_count *truc)
 		}
 		i++;
 	}
-	if (!ft_check_pec(pec, len))
+	if (!ft_check_pec(pec, len, i))
 		return (0);
 	return (i);
 }
