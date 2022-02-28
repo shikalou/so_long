@@ -6,13 +6,13 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/25 18:35:48 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:22:12 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_isvalid(char c, char *toto, int pec[4], t_count *truc)
+int	ft_isvalid(char c, char *toto, int pec[4], int *truc)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	ft_isvalid(char c, char *toto, int pec[4], t_count *truc)
 			if (c == 'C')
 			{
 				pec[2]++;
-				truc->total = pec[2];
+				*truc = pec[2];
 			}
 			if (c == '1')
 				pec[3]++;
@@ -40,7 +40,7 @@ int	ft_isvalid(char c, char *toto, int pec[4], t_count *truc)
 	return (0);
 }
 
-int	ft_check_str(char *str, int pec[4], size_t len, t_count *truc)
+int	ft_check_str(char *str, int pec[4], size_t len, int *truc)
 {
 	int	j;
 	int	p;
@@ -120,7 +120,7 @@ int	ft_check_pec(int pec[4], int len, int i)
 		return (1);
 }
 
-int	ft_check_map(int fd, t_count *truc)
+int	ft_check_map(int fd, int *truc)
 {
 	char	*str;
 	int		i;

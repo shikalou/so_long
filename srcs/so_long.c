@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/25 18:28:09 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:37:44 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,22 @@ int	main(int argc, char **argv)
 	int		fd;
 	int		i;
 	t_data	*data;
-	t_count	*truc;
+	int		truc;
 
 	if (!ft_check_arg(argc, argv[1]))
 		return (1);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		perror("open");
+		perror("\e[1;31mError\nopen");
+		write(2, "\e[0m", 4);
 		return (1);
 	}
-	truc = malloc(sizeof(t_count));
-	i = ft_check_map(fd, truc);
+	i = ft_check_map(fd, &truc);
+	if (i == 0)
+		return (1);
 	close(fd);
 	data = init_data(i, argv[1], truc);
-	free(truc);
 	ft_printmap(data);
 	ft_hook(data);
 	mlx_loop_hook(data->mlx, string_put, data);

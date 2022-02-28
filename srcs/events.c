@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:32:16 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/25 16:53:48 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:42:22 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	string_put(t_data *data)
 	c = 0xffffff;
 	step = ft_itoa(data->step);
 	str = ft_strjoin(s, step);
-	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall, 1 * 50, 0);
-	mlx_string_put(data->mlx, data->mlx_win, 10, 25, c, str);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall, 2 * 50, 0);
+	mlx_string_put(data->mlx, data->mlx_win, 25, 25, c, str);
 	free(str);
 	free(step);
 	return (0);

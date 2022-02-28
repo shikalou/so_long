@@ -6,17 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:50:34 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/25 18:20:58 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:26:36 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_free_no_img(t_count *truc)
-{
-	free(truc);
-	exit(0);
-}
 
 void	ft_free_map(t_data *data)
 {
