@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:52:50 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/22 17:54:07 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/28 14:00:47 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ char	*ft_save_line(int i, char save[BUFFER_SIZE + 1], int fd)
 
 char	*get_next_line(int fd)
 {
-	char		*line; //str que je vais return
-	static char	save[BUFFER_SIZE + 1]; //la str sur laquelle je travaille
+	char		*line;
+	static char	save[BUFFER_SIZE + 1];
 	int			i;
 
 	if (fd < 0 || BUFFER_SIZE == 0)

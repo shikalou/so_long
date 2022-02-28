@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:54:07 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 13:37:44 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/02/28 14:08:24 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_check_arg(int argc, char *arg)
 
 	if (argc != 2)
 	{
-		ft_putstr_fd("Error\nWrong arguments count\n", 2);
+		ft_putstr_fd("Error\nWrong arguments count \n", 2);
 		return (0);
 	}
 	if (ft_strlen(arg) > 3)

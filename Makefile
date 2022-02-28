@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 16:53:33 by ldinaut           #+#    #+#              #
-#    Updated: 2022/02/25 17:36:49 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/02/28 14:07:44 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,4 +59,4 @@ fclean	:	clean
 
 re		:	fclean all
 
-.PHONY: all clean fclean rem
+.PHONY: all clean fclean re
