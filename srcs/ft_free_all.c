@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:50:34 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 13:26:36 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:36:22 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_free_map(t_data *data)
 {
@@ -40,6 +40,12 @@ void	ft_free_struct(t_data *data)
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
+	ft_free_map(data);
+	free(data);
+}
+
+void	ft_free_struct_map(t_data *data)
+{
 	ft_free_map(data);
 	free(data);
 }

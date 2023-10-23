@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:36:42 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/24 19:50:41 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:50 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_free(char **tab, int j)
 {

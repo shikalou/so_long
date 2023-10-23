@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:52:50 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 14:00:47 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:16:36 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 char	*ft_strjoin2(char *save, char *ret, char *line)
 {

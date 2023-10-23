@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:32:16 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 13:42:22 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:50 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 int	string_put(t_data *data)
 {

@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:16:55 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/24 19:44:56 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:50 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 int	ft_move_d(t_data *data)
 {

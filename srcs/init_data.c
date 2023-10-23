@@ -6,45 +6,45 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:39:32 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 13:26:14 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:37:23 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_check_img(void)
 {
 	if (open("img/", __O_DIRECTORY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/floor.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/wall.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/exit3.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/link-d.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/link-u.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/link-l.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/link-r.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/rupee.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/rupee2.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 	if (open("img/ennemy.xpm", O_RDONLY) < 0)
-		exit(0);
+		exit(1);
 }
 
 void	ft_check_size(t_data *data, int x, int y)
 {
 	if (x > 52 || y > 26)
 	{
-		ft_free_map(data);
-		free(data);
-		exit(0);
+		ft_printf("map too big !\n");
+		ft_free_struct_map(data);
+		exit(1);
 	}
 }
 
@@ -72,14 +72,18 @@ t_data	*init_data(int i, char *map, int truc)
 	ft_check_img();
 	data = malloc(sizeof(t_data));
 	if (!data)
-		exit(0);
+		exit(1);
 	data->map = ft_malloctab(i, map);
 	data->max_liney = i;
 	data->len_linex = (ft_strlen(data->map[0]) - 1);
 	ft_check_size(data, data->len_linex, data->max_liney);
 	data->mlx = mlx_init();
 	if (!data->mlx)
-		exit(0);
+	{
+		ft_printf("mlx_init failed\n");
+		ft_free_struct_map(data);
+		exit(1);
+	}
 	data->mlx_win = mlx_new_window(data->mlx, (data->len_linex * 50),
 			(data->max_liney * 50), "The Legend of Lune");
 	init_img(data);

@@ -6,11 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:43:21 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 13:22:12 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:50 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 int	ft_isvalid(char c, char *toto, int pec[4], int *truc)
 {
@@ -43,10 +43,8 @@ int	ft_isvalid(char c, char *toto, int pec[4], int *truc)
 int	ft_check_str(char *str, int pec[4], size_t len, int *truc)
 {
 	int	j;
-	int	p;
 
 	j = 0;
-	p = 0;
 	if (!str)
 		return (1);
 	pec[3] = 0;

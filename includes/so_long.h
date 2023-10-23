@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:06:24 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/02/28 13:35:02 by ldinaut          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:36:44 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define SO_LONG_H
 # define TOTO "10PECB"
 
-# include "minilibx-linux/mlx.h"
-# include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "../minilibx-linux/mlx.h"
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
@@ -87,6 +87,7 @@ void	init_img(t_data *data);
 void	ft_check_size(t_data *data, int x, int y);
 void	ft_free_struct(t_data *data);
 void	ft_free_map(t_data *data);
+void	ft_free_struct_map(t_data *data);
 void	ft_check_img(void);
 
 #endif
